@@ -1,0 +1,75 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tokenX",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenY",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountX",
+						"type": "uint256"
+					}
+				],
+				"name": "swapXY",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Ethereum/B2/B2E3.sol": "AMMPool"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Ethereum/B2/B2E3.sol": {
+			"keccak256": "0xa7f9d915e8dbeb0d5942a6afb3837a437212c0ea1d16be5713fd2c32daa78fdc",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ce47d630b54929b84c9641fd8121417e3474ddb248dd402de5ae1b1841be2d54",
+				"dweb:/ipfs/QmV1zRHwshaQXdz9dkxXy1ctAU7WKedp2KHZmVNrZxBxwJ"
+			]
+		}
+	},
+	"version": 1
+}
