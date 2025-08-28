@@ -17,7 +17,7 @@ I did some experiments with Uniswap V1 and V2, basical, understanding how it wor
 V1 is simple and easy to understand but V2 with introduction of smart contracts like Factory, Router, Pair helped me alot to do these exercises.
 **Process and Screenshots**
 1. Deploy "BaddToken in Remix.
-   ![Deploy Token](screenshots/e1_1.jpg)
+   ![Deploy Token](screenshots/e1_1.png)
 2. Transfer tokens between accounts.
    ![Transfer Token](screenshots/b1e1_2.png)
 3. Check balance after transfer.
