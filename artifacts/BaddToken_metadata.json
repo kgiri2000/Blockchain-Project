@@ -25,54 +25,6 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "spender",
-						"type": "address"
-					}
-				],
-				"name": "allowance",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "spender",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "approve",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
 						"name": "account",
 						"type": "address"
 					}
@@ -111,35 +63,6 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -155,7 +78,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Ethereum/B2/B2E3.sol": "BaddToken"
+			"Ethereum/B1/B2E1.sol": "BaddToken"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -169,12 +92,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Ethereum/B2/B2E3.sol": {
-			"keccak256": "0xa7f9d915e8dbeb0d5942a6afb3837a437212c0ea1d16be5713fd2c32daa78fdc",
+		"Ethereum/B1/B2E1.sol": {
+			"keccak256": "0x434ce54d4874877a7d72230e4c92965f6504030526e40e16e5700e2f3b3a63c1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ce47d630b54929b84c9641fd8121417e3474ddb248dd402de5ae1b1841be2d54",
-				"dweb:/ipfs/QmV1zRHwshaQXdz9dkxXy1ctAU7WKedp2KHZmVNrZxBxwJ"
+				"bzz-raw://bdbb6972f883d3d2285eaafeb76e6ae97b5fcf06553e475e1d3ae527c9c1b604",
+				"dweb:/ipfs/QmdALFRBUrrSBmN1qBar79aHHjuJaPNbZNsLYZ632Mz1o1"
 			]
 		}
 	},
