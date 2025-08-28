@@ -21,10 +21,11 @@ V1 is simple and easy to understand but V2 with introduction of smart contracts 
 2. Transfer tokens between accounts.
    ![Transfer Token](screenshots/b1e1_2.png)
 3. Check balance after transfer.
-  ![Balances](screenshots/b1e1_3.png)
+  ![Balances](https://raw.githubusercontent.com/kgiri2000/Blockchain-Project/main/Ethereum/B1/screenshots/b1e1_3.png)
 4. Ethereum Screenshot
    ![Ethereum Screenshot](https://raw.githubusercontent.com/kgiri2000/Blockchain-Project/main/Ethereum/B1/screenshots/eth.jpg)
 
 ---
+
 
 
