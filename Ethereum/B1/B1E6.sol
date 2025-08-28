@@ -38,6 +38,12 @@ contract BaddToken {
     return true;
   }
 
+  //Helper function to remove the allowance
+  function removeAllowance(address owner, address spender) external returns (bool){
+    _allowance[owner][spender]=0;
+    return true;
+  }
+
   // To check the allowance
   function allowance(address owner, address spender) external view returns (uint256){
     return _allowance[owner][spender];
@@ -59,8 +65,23 @@ contract AMMPool {
 
   function swapXY(uint amountX) public payable {
     require(amountX>0, "amountX = 0");
-    // dy/dx = 2
-    uint amountY = 2 * amountX;
+
+    uint x = tokenX.balanceOf(address(this));
+    uint y = tokenY.balanceOf(address(this));
+
+    //compute the output
+    // f(x,y) = (x+dx)(y-dy)
+    // f(x+dx,y-dy) = (x+dx)(y-dy) = k
+    // dy = y - (k/(x+dx))
+    // dy = y.dx/(x+dx)
+
+  
+
+    uint dx = amountX;
+    uint dy = y*dx/(x+dx);
+     //check we have enough fund in AMM pool
+    require(y> dy);
+    uint amountY = dy;
 
     //allowance and pull
     //also checked in transfer from
@@ -71,4 +92,13 @@ contract AMMPool {
     tokenY.transfer(msg.sender, amountY); 
 
   } 
+
+  //Undo Approve Function
+  function undo_approve() public {
+    //If Alice is calling,
+    //msg.sender will be Alice here and 
+    //msg.sender will be AMMPool inside the BaddToken
+    require(tokenX.removeAllowance(msg.sender, address(this)));
+   
+  }
 }

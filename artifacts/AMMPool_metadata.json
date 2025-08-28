@@ -48,7 +48,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Ethereum/B2/B2E3.sol": "AMMPool"
+			"Ethereum/B1/B1E3.sol": "AMMPool"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -62,12 +62,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Ethereum/B2/B2E3.sol": {
-			"keccak256": "0xa7f9d915e8dbeb0d5942a6afb3837a437212c0ea1d16be5713fd2c32daa78fdc",
+		"Ethereum/B1/B1E3.sol": {
+			"keccak256": "0x1e7fcbff1467a6d87e1fcbef5c2b37853bbf0df958d9eba886ed957292f87139",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ce47d630b54929b84c9641fd8121417e3474ddb248dd402de5ae1b1841be2d54",
-				"dweb:/ipfs/QmV1zRHwshaQXdz9dkxXy1ctAU7WKedp2KHZmVNrZxBxwJ"
+				"bzz-raw://2794c096f11259f2f13c08e89c6523005dff14d15ac877ff232f7d61a69ece00",
+				"dweb:/ipfs/QmQwR7Nt6WRDV1gzBmTxKb4wEyc6uFxDzuukT7PpfY79Aa"
 			]
 		}
 	},
