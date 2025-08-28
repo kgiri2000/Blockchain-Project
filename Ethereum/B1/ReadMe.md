@@ -31,7 +31,7 @@ V1 is simple and easy to understand but V2 with introduction of smart contracts 
   ![Balances](screenshots/e1p3.png)
 
 
----
+
 ## Exercise 2 - Extended Token Contract
 
 Given that I went to look source code of uniswap V2 and have knowledge on how each token  are under ERC-20 compliant I started gathering more information.
@@ -52,7 +52,7 @@ Charlie Account = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db
     The balance of B is 1 and allowance is 0
     ![TransferFrom](screenshots/e2p3.png)
 
----
+
 
 
 
