@@ -19,7 +19,8 @@ V1 is simple and easy to understand but V2 with introduction of smart contracts 
 1. Deploy "BaddToken in Remix.
     0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 = me
     0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 = Alice
-   ![Deploy Token](screenshots/e1p1.png)
+
+   ![Deploy Token](screenshots/e1p1.jpg)
 2. Transfer tokens between accounts.
     The mine amount is 0 now.
    ![Transfer Token](screenshots/e1p2.png)
