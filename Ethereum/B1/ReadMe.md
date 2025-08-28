@@ -17,13 +17,16 @@ I did some experiments with Uniswap V1 and V2, basical, understanding how it wor
 V1 is simple and easy to understand but V2 with introduction of smart contracts like Factory, Router, Pair helped me alot to do these exercises.
 **Process and Screenshots**
 1. Deploy "BaddToken in Remix.
-   ![Deploy Token](screenshots/e1_1.png)
+    0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 = me
+    0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 = Alice
+   ![Deploy Token](screenshots/e1p1.png)
 2. Transfer tokens between accounts.
-   ![Transfer Token](screenshots/b1e1_2.png)
+    The mine amount is 0 now.
+   ![Transfer Token](screenshots/e1p2.png)
 3. Check balance after transfer.
-  ![Balances](https://raw.githubusercontent.com/kgiri2000/Blockchain-Project/main/Ethereum/B1/screenshots/b1e1_3.png)
-4. Ethereum Screenshot
-   ![Ethereum Screenshot](https://raw.githubusercontent.com/kgiri2000/Blockchain-Project/main/Ethereum/B1/screenshots/eth.jpg)
+    The balance of Alice account is 10 now after transfer.
+  ![Balances](screenshots/e1p3.png)
+
 
 ---
 
