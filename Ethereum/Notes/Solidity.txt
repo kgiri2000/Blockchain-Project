@@ -1,0 +1,116 @@
+Smart Contract: code that gets executed in BlockChain. It is public.
+
+pragma solidity ^0.4.24
+#Class
+contract MyContract{
+    //variable stored in block chain
+    string value; Variable that entire contract can access. It will be stored in the BlockChain
+
+    //Constructor
+    constructor() public{
+        value = "myValue";
+    }
+
+    //Getting the value
+    function get() public view returns(string){ // view because we are not changing anything
+                                                //has to return something
+        return value;
+    }
+
+    //Setting the value
+    function set(string _value) public{
+        value = _value;
+    }
+}
+
+
+Part 2
+pragma solidity 0.5.1
+
+contract MyContract{
+    string value;
+    //Constructor
+    constructor() public{
+        value = "myValue";
+    }
+    //Getting the value
+    function get() public view returns(string memory){ 
+        return value;
+    }
+    //Setting the value
+    function set(string memory _value) public{
+        value = _value;
+    }
+}
+
+If we do,
+    string public value;
+
+    we get the get value function for free.
+
+We can also do,
+    string public value = "myValue";
+    no constructor needed.
+
+We can also do constant.
+
+
+#DATA TYPES
+
+bool public myBool = true;
+int public myInt = 1;
+uint pubic myUint =1; //Can't to negative
+unint8 public myUint = 8;
+uint256 public myUint256 = 99999;
+
+#ENUM
+enumerated list that allows us keep track of set lists of things
+
+    enum State {Waitingm Ready, Active}
+    State public state;
+
+    constructor() public{
+        state = State.Waiting;
+    }
+
+    function activate() public{
+        state = State.Active;
+    }
+
+    function isActive() public view returns(bool){
+        return state == State.Active;
+    }
+
+#STRUCT
+
+- Ways to define our own data structure
+    #We will create lot of person and store it in People array
+    Person[] public people;
+    unint256 public peopleCount;
+    struct Person{
+        string _firstName;
+        string _lastName;
+    }
+
+    #Adding to the array
+    function addPerson(string memory _firstName, string memory _lastName) public{
+        people.push(Person(_firstName, _lastName));
+        peopleCount+=1;
+    }
+
+#USING MAPPING
+    mapping(key => value) <access specifier> <name>;
+    #We will create lot of person and store it in People array
+    unint256 public peopleCount= 0;
+    mapping(unit=>Person) public people;
+    struct Person{
+        uint _id;
+        string _firstName;
+        string _lastName;
+    }
+
+    #Adding to the array
+    function addPerson(string memory _firstName, string memory _lastName) public{
+        peopleCount+=1;
+        people[peopleCount] = Person(peopleCount, _firstName, _lastName)
+    }

@@ -1,0 +1,75 @@
+Decentralized exchange(DEX) built on Ethereum that allows to swap ERC-20 tokesn directly from their wallet.
+Instead of using an order book, Uniswap uses automated market maker(AMM)
+ERC-20:
+    List of functions and events that must be implemented into a token to be considered ERC-20 compliant.
+    Describe what must be included in the smart-contract-enabled token.
+    Functions:
+        totalSupply() -> unit256 // Returns the amount  of tokens in existence
+        balanceOf(address, account)->unint256 // Returns the amount of tokesn owned by account
+        transfer(address recipient, uint256 amount) -> bool //Moves amount tokens from caller's to recipient
+        allowance(address owner, address spender)-> uint 256 // Returns the remaining number of tokens that spender will be allowed
+                                                             // to spend on the behalf if owner throguh transferFrom.
+        approve(address spender, unit256 amount) -> uint256 //Sets amount as the allowance of spender over the caller's token 
+        transferFrom(address sender, address recipient, unint256 amount)-> bool // moves amount token using the allownace mechanism
+
+        Events:
+
+        Transfer(address from, address to, unint256 value) //  
+        Approval(address owner, address spender, unit256 value) //
+        ..
+
+                           
+Uniswap v1
+
+    Costant Product Market Maker(CPMM)
+
+    Every market is Token <-> ETH only (mo direct ERC20 <-> ERC20)
+    To swap Token A -> Token B you route through ETH; Token A -> ETH, tehn ETH -> Token B( two swaps , two fees)
+    Swap Formulas:
+    1. ETH(e) -> Token(outT)
+        outT = (r*e)T/(E + r*e)
+        New reserves: E' = E + e, T' = T - outT
+    2.Token -> ETH 
+        outE = (r*t)*E/(T + r*t)
+        New reserves: T' = T + t, E' =  E - outE
+    3.TokenA => TokenB
+        Two legs:
+        1. TokenA -> ETH on the A/ETH Pool
+        2. ETH -> TokenB on B/ETH, using that ETH as input
+
+    Fees are paid twicem and incur slippage on both pools
+
+    How exchange happens?
+    1. Your app/wallet builds the transaction. //Looks uo the address and parameters
+    2. Allowance // ERC-20 approval TokenA.approve(ExchangeA, amountIn)
+    3. Swap call
+        ExchangeA.tokenToTokenTransferInput(amountIn, .....TokenBm, recipient)
+        Signed by my privatekey-> mempool until validators picks it up.
+    4. On-chain execution:
+        Runs the exchange call
+        Token A -> ETH and then ETH -> TokenB
+    5. Check and finish
+
+Uniswap V2
+    Pool reserves: 
+        x = reserves of token X(e.g ETH)
+        y = reserves of token Y(e.g USDT)
+
+        Invariant(no free, idealized):  x*y = k 
+        Fee f  (r.g 0.3%) -> f = 0.003; effective multiplier r = 1 -f
+        Pool(spot) price of X in terms of Y: P =y/x (Y per 1 unit of X)
+
+    Direct ERC-20 to ERC-20
+    Introduced a Router contract, user-friendly front door for swapds and liquidity
+    Canonical math helpers in Library
+    TWAP oracles
+    Flash swaps
+
+
+
+Sources
+0. https://github.com/Uniswap
+1. https://learnweb3.io/lessons/lesson-5-how-uniswap-works-understanding-uniswap-v2-pools-and-smart-contracts/
+2. https://docs.openzeppelin.com/contracts/2.x/api/token/erc20
+3. https://medium.com/@jamesowen.dev/what-is-uniswap-v1-v2-v3-v4-563440e0885f
+
