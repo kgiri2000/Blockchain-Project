@@ -50,7 +50,8 @@ Charlie Account = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db
     ![Allowance](screenshots/e2p2.png)
 3. C.transferFrom(A,B,1)
     The balance of B is 1 and allowance is 0
-    ![TransferFrom](screenshots/e2p3.png)
+    ![TransferFrom](screenshots/e2p3.png?raw=true)
+
 
 
 
