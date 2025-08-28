@@ -18,17 +18,19 @@ contract BaddToken {
     balances[receiver] = balances[receiver] + amount;    
     return true;  
   }
-    // Aprrove  will add the amount from the balance of the msg.sender to allowance for the spender
+  // Aprrove  will add the amount from the balance of the msg.sender to allowance for the spender
   function approve(address spender, uint256 amount) external returns (bool){
     require(amount<=balances[msg.sender]);
     _allowance[msg.sender][spender] = amount;
     return  true;
 
   }
+  // transfer the amount from the requestor to the pool or any address.
+  //
   function transferFrom(address from, address to, uint256 amount) external returns (bool){
-    require(amount <= _allowance[from] [msg.sender]); //checks that amount< allowance for msg.sender
-    require(amount <= balances[from]); // might not require
-    _allowance[from][msg.sender]-=amount; // reduce the allowance for msg.sender or sender
+    require(amount <= _allowance[from] [msg.sender]); //checks that amount< allowance for msg.sender/owner
+    require(amount <= balances[from]); // make sure requestor has enough balance 
+    _allowance[from][msg.sender]-=amount; // reduce the allowance given to sender by the owner
     balances[from]-=amount; // reduce the balance of the owner
     balances[to]+=amount; // increase the balance of the receiver
     return true;
