@@ -29,6 +29,7 @@ V1 is simple and easy to understand but V2 with introduction of smart contracts 
 3. Check balance after transfer.
     The balance of Alice account is 10 now after transfer.
   ![Balances](screenshots/e1p3.png)
+<img width="1514" height="830" alt="e1p1" src="https://github.com/user-attachments/assets/e21ae211-97f1-4585-91dc-ef907ce6427a" />
 
 
 
@@ -51,6 +52,7 @@ Charlie Account = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db
 3. C.transferFrom(A,B,1)
     The balance of B is 1 and allowance is 0
     ![TransferFrom](screenshots/e2p3.png?raw=true)
+
 
 
 
