@@ -22,14 +22,13 @@ V1 is simple and easy to understand but V2 with introduction of smart contracts 
     0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 = me
     0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 = Alice
 
-   ![Deploy Token](screenshots/e1p1.png)
+   ![Deploy Token](screenshots/e1p1.png?raw=true)
 2. Transfer tokens between accounts.
     The mine amount is 0 now.
-   ![Transfer Token](screenshots/e1p2.png)
+   ![Transfer Token](screenshots/e1p2.png?raw=true)
 3. Check balance after transfer.
     The balance of Alice account is 10 now after transfer.
-  ![Balances](screenshots/e1p3.png)
-<img width="1514" height="830" alt="e1p1" src="https://github.com/user-attachments/assets/e21ae211-97f1-4585-91dc-ef907ce6427a" />
+  ![Balances](screenshots/e1p3.png?raw=true)
 
 
 
@@ -45,13 +44,14 @@ Bob Account = 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2
 Charlie Account = 0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db
 
 1. Deploy BaddToken with balance of Alice = 1
-    ![Initial](screenshots/e2p1.png)
+    ![Initial](screenshots/e2p1.png?raw=true)
 2. A.approve(C,1)
     The allowance of C is 1 now.
-    ![Allowance](screenshots/e2p2.png)
+    ![Allowance](screenshots/e2p2.png?raw=true)
 3. C.transferFrom(A,B,1)
     The balance of B is 1 and allowance is 0
     ![TransferFrom](screenshots/e2p3.png?raw=true)
+
 
 
 
