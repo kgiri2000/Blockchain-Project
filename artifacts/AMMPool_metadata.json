@@ -33,6 +33,13 @@
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "undo_approve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -48,7 +55,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Ethereum/B1/B1E3.sol": "AMMPool"
+			"Ethereum/B1/B1E6.sol": "AMMPool"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -62,12 +69,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Ethereum/B1/B1E3.sol": {
-			"keccak256": "0x1e7fcbff1467a6d87e1fcbef5c2b37853bbf0df958d9eba886ed957292f87139",
+		"Ethereum/B1/B1E6.sol": {
+			"keccak256": "0x762b81c9ac87ec99f9c6551eb96e1bc1073ec974575f10d610150446fe394d21",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2794c096f11259f2f13c08e89c6523005dff14d15ac877ff232f7d61a69ece00",
-				"dweb:/ipfs/QmQwR7Nt6WRDV1gzBmTxKb4wEyc6uFxDzuukT7PpfY79Aa"
+				"bzz-raw://ec1fa2f2987da000eb58c4fd34403ee5eed55b23fe5b0247c8f4f1465afe1856",
+				"dweb:/ipfs/QmYfUh3VByqV3n15zPwPCXHXjs4Y5BVdRPEimvc4Lc3mXJ"
 			]
 		}
 	},
