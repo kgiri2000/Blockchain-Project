@@ -7,7 +7,9 @@ Screenshots of the implementation process and execution results are provided for
 2. [Exercise 2 - Extended Token Contract](#exercise-2-extended-token-contract)
 3. [Exercise 3 - AMM Deisgn with Fixed Rate](#exercise-3-amm-design)
 4. [Exercise 4 - Security Analysis](#exercise-4-security-analysis).
----
+5. [Exercise 5 - Constant Product AMM](#exercise-5-constant-product-amm)
+6. [Exercise 6 - Undo Approve](#undo-approve).
+--
 
 ## Exercise 1 - ERC20 Token Transfer
 This was fairly easy exercise. First, I had to familarize with remix; however, I had previously completed A2 Exercise so, this was not a problem.
@@ -16,7 +18,6 @@ blockchain, MPT(data storage), gloal state Trie, Transcation Trie, Receipt Trie,
 Also, Uniswap official docs with other resources helped me to learn how this Decentralized exchange allows to swap ERC-20 tokens.
 I did some experiments with Uniswap V1 and V2, basical, understanding how it works from very fundamental level.
 V1 is simple and easy to understand but V2 with introduction of smart contracts like Factory, Router, Pair helped me alot to do these exercises.
-
 **Process and Screenshots**
 
 1. Deploy "BaddToken in Remix.
@@ -30,7 +31,7 @@ V1 is simple and easy to understand but V2 with introduction of smart contracts 
 3. Check balance after transfer.
     The balance of Alice account is 10 now after transfer.
    <img width="1640" height="850" alt="e1p3" src="https://github.com/user-attachments/assets/9ce140e0-3a44-4c6d-b9f4-a6f3bd2fbde6" />
-
+--
 ## Exercise 2 - Extended Token Contract
 
 Given that I went to look source code of uniswap V2 and have knowledge on how each token  are under ERC-20 compliant I started gathering more information.
@@ -80,10 +81,40 @@ Exercise 3 - AMM Deisgn with Fixed Rate
 ---
 Exercise 4 - Security Analysis
 
+Exercise 4 of the problem forces you to understand the how a AMM contract can be vunerable. This helped me understand the concepts like revert, atomicity in the solidity. There are 2 cases for the exercise 4:
+1.Insert swapXY without approve.
+    In my code this will trigger tokenX.transferFrom() function which returns false if we don't approve the allowance, this is revert back any transcition that has happened,
+    and the state will not change as provided in the question.
+2. Insert swapXY after approve from Alice and before swapXY from Alice. 
+    Same things happens here, I know this is frontrunning attacks but it is unsuccessful as the condition required for the allowance amount is not met.
+    First picture shows the condition after swapXY by Bob which doesn't change any balance for Bob and
+    Second picture shows the condition after swapXY by Alice, which will decrease her balance for TokenX and increase the balance of TokenY.
+    
+![e4p1](https://github.com/user-attachments/assets/f7ab5ad5-a2ab-4584-9d1b-c58baa38321f)
+![e4p2](https://github.com/user-attachments/assets/3ba2c03c-64cb-48e0-84a1-6aa4acac7301)
 
+--
+## Exercise 5 - Constant Product AMM
 
+This was very similar to the Exercise 3 with few changes.
+First, the only difference is how we are implementating the AMM. Previously we used fixed rate as dy/dx = 2 but no we are using constant-product AMM.
+Since, the initial code only only had function implemented to swap X to Y but not Y to X, I have no implemented a way to swap Y to X but it should niot be hard.
+Basically, I had to rearrange the constant product invariant to get the amount of tokenY.
+1. In picture below we, can see that pool has 1 and 4 token in each tokenX and tokenY's balances
+   ![e5p1](https://github.com/user-attachments/assets/2850eb3e-4510-4175-905a-f8a60c0283f3)
 
+2. In the picture below, after doing approve and swap, the pool has 2 and 2 token in each tokenX and tokenY balances.
+    ![e5p2](https://github.com/user-attachments/assets/09bad97e-50fd-4d93-ba6c-8ac5728c57b4)
 
+--
 
+Exercise 6 - Undo Approve
 
+This exercise was confusing at first because I couldn't undo the approval from AMMpool without having the helper function. Because, the allowace resides in the TokenX contract, I couldn't do something like tokenX.approve(address(this),0) because approve function has _allowance[msg.sender(AMMpool)][spender(AMMpool]  which will not undo the allowance. Hence, I had to implement using helper function which can be called direclty from Token contract which requires parameters(address owner, address spender) but, if we call it from AMMpool without the input and can undo the approval.
+1. The picture below shows that allowance of 1 token from A to pool.
+   ![e6p1](https://github.com/user-attachments/assets/28956b12-31d6-4eb9-8126-6774dcc1861f)
+
+2. After undo_approve, the allowance is 0 agian.
+   ![e6p2](https://github.com/user-attachments/assets/d8c2020b-f4be-4d4d-a29c-42c6d2357813)
+--
 
